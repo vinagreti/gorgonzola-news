@@ -1,0 +1,287 @@
+/*APP*/
+.app{
+  min-width: 320px;
+}
+
+/*TOPBAR*/
+.topbar-wrapper{
+  font-family: 'Lato', sans-serif;
+  height: 56px;
+  border: 1px solid #979797;
+}
+
+.topbar{
+  margin: auto;
+  width: 81%;
+}
+
+.topbar .logo {
+  display: inline-block;
+  margin-top: 4px;7
+  height: 45px;
+  width: 45px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 45px;
+}
+
+.topbar .menu-icon {
+  display: inline-block;
+  margin-top: 4px;7
+  height: 45px;
+  width: 45px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 45px;
+}
+
+.topbar .menu {
+  display: inline-block;
+  float: right;
+}
+
+.topbar .menu ul{
+  list-style: none;
+  display: inline-block;
+  font-size: 17px;
+}
+
+.topbar .menu ul li{
+  display: inline-block;
+}
+
+.topbar .menu ul li:not(:last-child){
+  margin-right: 17px;
+}
+
+.topbar .menu ul li a{
+  text-decoration: none;
+  color: #3E433E;
+}
+
+.topbar .menu-icon{
+  display: none;
+}
+
+/*CONTENT*/
+.content{
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  margin-top: 65px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 81%;
+}
+
+.content .divider{
+  width: 100%;
+  border: 1px solid #E4E4E4;
+  margin: 10px 0 30px 0;
+}
+
+/*ARTICLES*/
+.article{
+  color: #000000;
+}
+
+.article .article-category{
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+}
+
+.article .article-image{
+  width: 100%;
+}
+
+.article .article-title{
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 17px;
+  margin: 10px 0;
+}
+
+.article .author{
+  height: 45px;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.article .author-avatar{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.article .author-name{
+  height: 45px;
+  line-height: 45px;
+  font-size: 13px;
+  margin-left: 10px;
+  color: #808080;
+}
+
+.article .article-desc{
+  font-size: 14px;
+  color: #686868;
+  letter-spacing: 0;
+}
+
+/*ARTICLES HIGHLIGHT*/
+.highlight-article{
+  display: inline-block;
+  width: 48%;
+  height: 26.6%;
+}
+
+.highlight-article .article-title{
+  font-size: 29px;
+  line-height: 35px;
+}
+
+.highlight-article .article-category{
+  color: #FF001F;
+}
+
+.highlight-article .author{
+  height: 45px;
+  display: flex;
+}
+
+.highlight-article .author-avatar{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.highlight-article .author-name{
+  font-size: 13px;
+}
+
+/*ARTICLES SECONDARY*/
+.secondary-article{
+  width: 23%;
+  height: 12.5%;
+}
+
+.secondary-article .article-category{
+  color: #4990E2;
+}
+
+/*ARTICLES TERTIARY*/
+.tertiary-article{
+  width: 23%;
+  height: 12.5%;
+}
+
+.tertiary-article .article-category{
+  color: #7CBC37;
+}
+
+/*ARTICLES MINIMAL*/
+.minimal-article{
+  width: 31%;
+}
+
+.minimal-article-1 .article-category{
+  color: #F6A623;
+}
+
+.minimal-article-2 .article-category{
+  color: #4990E2;
+}
+
+.minimal-article-3 .article-category{
+  color: #7CBC37;
+}
+
+/*MOBILE*/
+@media (max-width: 1170px){
+  .content .divider{
+    display: none;
+  }
+
+  .topbar{
+    text-align: center;
+  }
+
+  .topbar .logo{
+    display: inline-block;
+  }
+
+  .topbar .menu-icon{
+    display: inline-block;
+    float: left;
+  }
+
+  .topbar .menu ul{
+    display: none;
+  }
+
+  .article{
+    margin-bottom: 50px;
+  }
+
+  .content, .topbar{
+    width: 90%;
+  }
+
+  /*ARTICLES HIGHLIGHT*/
+  .highlight-article{
+    display: inline-block;
+    width: 100%;
+  }
+
+  /*ARTICLES SECONDARY*/
+  .secondary-article{
+    width: 48%;
+  }
+
+  /*ARTICLES TERTIARY*/
+  .tertiary-article{
+    width: 48%;
+  }
+
+  /*ARTICLES MINIMAL*/
+  .minimal-article{
+    width: 48%;
+  }
+
+}
+
+/*MOBILE SMALL*/
+@media (max-width: 750px){
+
+  .content, .topbar{
+    width: 90.6%;
+  }
+
+  /*ARTICLES HIGHLIGHT*/
+  .highlight-article{
+    display: inline-block;
+    width: 100%;
+  }
+
+  /*ARTICLES SECONDARY*/
+  .secondary-article{
+    width: 100%;
+  }
+
+  /*ARTICLES TERTIARY*/
+  .tertiary-article{
+    width: 100%;
+  }
+
+  /*ARTICLES MINIMAL*/
+  .minimal-article{
+    width: 100%;
+  }
+}
