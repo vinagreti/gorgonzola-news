@@ -18,11 +18,10 @@ class App extends Component {
   }
 
   loadFeed(){
-    fetch.get('assets/feed.json')
+    fetch.get('article/')
     .then(res => {
-      console.log(res)
       this.setState({
-        feed: res,
+        feed: res.results,
         isLoading: false
       });
     });
