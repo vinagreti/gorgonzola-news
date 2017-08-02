@@ -1,0 +1,20 @@
+/*APP*/
+.app{
+  min-width: 320px;
+}
+
+/*CONTENT*/
+.content{
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  margin-top: 65px;
+  margin-bottom: 30px;
+  width: 81%;
+}
+
+/*MOBILE SMALL*/
+@media (max-width: 750px){
+  .content{
+    width: 90.6%;
+  }
+}
