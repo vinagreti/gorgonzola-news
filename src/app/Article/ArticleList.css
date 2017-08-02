@@ -4,3 +4,67 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.highlight-article{
+  display: inline-block;
+  width: 48%;
+  height: 26.6%;
+}
+
+.secondary-article{
+  width: 23%;
+  height: 12.5%;
+}
+
+.minimal-article{
+  width: 31%;
+}
+
+
+/*MOBILE*/
+@media (max-width: 1170px){
+  .divider{
+    display: none;
+  }
+
+  .article{
+    margin-bottom: 50px;
+  }
+
+  /*ARTICLES HIGHLIGHT*/
+  .highlight-article{
+    display: inline-block;
+    width: 100%;
+  }
+
+  /*ARTICLES SECONDARY*/
+  .secondary-article{
+    width: 48%;
+  }
+
+  /*ARTICLES MINIMAL*/
+  .minimal-article{
+    width: 48%;
+  }
+
+}
+
+/*MOBILE SMALL*/
+@media (max-width: 750px){
+
+  /*ARTICLES HIGHLIGHT*/
+  .highlight-article{
+    display: inline-block;
+    width: 100%;
+  }
+
+  /*ARTICLES SECONDARY*/
+  .secondary-article{
+    width: 100%;
+  }
+
+  /*ARTICLES MINIMAL*/
+  .minimal-article{
+    width: 100%;
+  }
+}

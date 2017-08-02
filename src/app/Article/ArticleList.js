@@ -3,11 +3,28 @@ import './ArticleList.css';
 import Article from './Article.js';
 
 class ArticleList extends Component {
+
+  getClassByPosition = (position) => {
+    console.log(position)
+    switch(position){
+      case 0:
+        return 'highlight-article';
+      case 1:
+        return 'secondary-article';
+      case 2:
+        return 'secondary-article';
+      default:
+        return 'minimal-article';
+    }
+  }
+
   render() {
     return (
       <div className="article-list">
-        {this.props.articles.map((article) => {
-          return <Article article={article} key={article.id}></Article>;
+        {this.props.articles.map((article, index) => {
+          return <div className={this.getClassByPosition(index)} key={article.id}>
+            <Article article={article}></Article>
+          </div>;
         })}
       </div>
     );

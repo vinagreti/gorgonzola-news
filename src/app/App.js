@@ -2,44 +2,48 @@ import React, { Component } from 'react';
 import './App.css';
 import ArticleList from './Article/ArticleList.js';
 import Topbar from './Topbar/Topbar.js';
-import noImg from './../assets/image/no-img.png';
-import feed from './feed.json';
-import axios from 'axios';
+import fetch from './Helpers/Request'
 
 class App extends Component {
-  categories = [
-    { id: 1, name: 'POLITICS', color: '#080808'}
-  ];
-
-  authors = [
-    { id: 1, name: 'Creed Bratton', avatar: noImg }
-  ];
-
-  constructor(props) {
+  constructor(props){
     super(props);
-
     this.state = {
-      posts: []
-    };
+      feed: [],
+      isLoading: true
+    }
   }
 
   componentDidMount() {
-    axios.get(`./${this.props.subreddit}.json`)
-      .then(res => {
-        const posts = res.data.data.children.map(obj => obj.data);
-        this.setState({ posts });
+    this.loadFeed();
+  }
+
+  loadFeed(){
+    fetch.get('assets/feed.json')
+    .then(res => {
+      console.log(res)
+      this.setState({
+        feed: res,
+        isLoading: false
       });
+    });
+
   }
 
   render() {
-    return (
-      <div className="app">
-        <Topbar></Topbar>
-        <div className="content">
-          <ArticleList articles={feed}></ArticleList>
+    if(this.state.isLoading){
+      return(
+        <i className="fa fa-spinner fa-spin">loading</i>
+      )
+    } else {
+      return(
+        <div className="app">
+          <Topbar></Topbar>
+          <div className="content">
+            <ArticleList articles={this.state.feed}></ArticleList>
+          </div>
         </div>
-      </div>
-    );
+      )
+    }
   }
 }
 
