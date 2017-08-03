@@ -15,6 +15,10 @@ class App extends Component {
 
   componentDidMount() {
     this.loadFeed();
+
+    setInterval(() => {
+      this.loadFeed();
+    }, 40000)
   }
 
   loadFeed(){

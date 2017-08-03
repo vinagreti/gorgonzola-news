@@ -7,7 +7,7 @@
 .content{
   font-family: 'Open Sans', sans-serif;
   margin: auto;
-  margin-top: 65px;
+  margin-top: 0px;
   margin-bottom: 30px;
   width: 81vw;
 }
@@ -18,3 +18,12 @@
     width: 90.6vw;
   }
 }
+
+/*MOBILE*/
+@media (max-width: 1170px){
+  .content{
+    width: 90vw;
+    margin-top: 0px;
+  }
+}
+

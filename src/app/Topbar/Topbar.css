@@ -4,6 +4,8 @@
   font-family: 'Lato', sans-serif;
   height: 56px;
   border-bottom: 1px solid #979797;
+  margin: 0;
+  padding: 0;
 }
 
 .topbar{
@@ -13,16 +15,53 @@
 
 .topbar .logo {
   display: inline-block;
-  margin-top: 5px;
+  margin-top: 7px;
   height: 45px;
   width: 45px;
 }
 
-.topbar .menu-button {
-  margin-top: 17px;
+
+.topbar .menu {
+  display: inline-block;
+  float: right;
+  height: 100%;
+}
+
+.topbar .menu ul{
+  list-style: none;
+  display: inline-block;
+  font-size: 14px;
+  height: 17px;
+  margin-top: 20px;
+}
+
+.topbar .menu ul li{
+  display: inline-block;
+  margin-right: 24px;
+}
+
+.topbar .menu ul li:last-child{
+  margin-right: 0px;
+  margin-left: 22px;
+  color: #4990E2;
+  font-weight: bold;
+}
+
+.topbar .menu ul li:last-child a{
+  color: #4990E2;
+}
+
+.topbar .menu ul li a{
+  text-decoration: none;
+  color: #3E433E;
+}
+
+.topbar .menu-button{
+  display: none;
   padding: none;
   height: 19px;
   width: 24px;
+  margin-top: 19px;
   border: none;
   background-color: white;
   cursor: pointer;
@@ -35,34 +74,6 @@
   border: none;
   margin: 1px 0 0 16px;
   padding: none;
-}
-
-.topbar .menu {
-  display: inline-block;
-  float: right;
-}
-
-.topbar .menu ul{
-  list-style: none;
-  display: inline-block;
-  font-size: 17px;
-}
-
-.topbar .menu ul li{
-  display: inline-block;
-}
-
-.topbar .menu ul li:not(:last-child){
-  margin-right: 17px;
-}
-
-.topbar .menu ul li a{
-  text-decoration: none;
-  color: #3E433E;
-}
-
-.topbar .menu-button{
-  display: none;
 }
 
 /*MOBILE*/

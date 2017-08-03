@@ -7,17 +7,19 @@ class Article extends Component {
 
   renderDescription(){
     if(this.props.article.desc && this.props.position !== 'highlight'){
-      return <p className="article-desc">{this.props.article.desc}</p>
+      return <p className="desc">{this.props.article.desc}</p>
     }
   }
 
   renderThumb(){
     if(this.props.article.thumb && this.props.position !== 'minimal'){
-      return <Img 
-        className="article-image"
-        alt="article"
-        src={[this.props.article.thumb, noImg]}
-      ></Img>
+      return <div className="thumb-wrapper">
+        <Img 
+          className="image"
+          alt="article"
+          src={[this.props.article.thumb, noImg]}
+        ></Img>
+      </div>
     }
   }
 
@@ -34,10 +36,11 @@ class Article extends Component {
   render() {
     return (
       <div className="article">
-        <p className="article-category"
-          style={{color: this.props.article.category.color}}>{this.props.article.category.name}</p>
+        <p className="category"
+          style={{color: this.props.article.category.color}}>{this.props.article.category.name}
+        </p>
         {this.renderThumb()}
-        <p className="article-title">
+        <p className="title">
           {this.props.article.title}
         </p>
         <div className="author">
