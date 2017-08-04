@@ -8,18 +8,22 @@
 .highlight-article{
   display: inline-block;
   width: 48%;
-  height: 26.6%;
 }
 
 .secondary-article{
   width: 23%;
-  height: 12.5%;
 }
 
 .minimal-article{
   width: 31%;
 }
 
+/*DIVIDER*/
+.divider{
+  width: 100%;
+  border: 1px solid #E4E4E4;
+  margin-top: 26px;
+}
 
 /*MOBILE*/
 @media (max-width: 1170px){

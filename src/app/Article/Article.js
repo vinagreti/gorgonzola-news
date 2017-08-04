@@ -7,17 +7,21 @@ class Article extends Component {
 
   renderDescription(){
     if(this.props.article.desc && this.props.position !== 'highlight'){
-      return <p className="article-desc">{this.props.article.desc}</p>
+      return <p className="desc">{this.props.article.desc}</p>
     }
   }
 
   renderThumb(){
     if(this.props.article.thumb && this.props.position !== 'minimal'){
-      return <Img 
-        className="article-image"
-        alt="article"
-        src={[this.props.article.thumb, noImg]}
-      ></Img>
+      return <div className="thumb-wrapper">
+        <button type="button" className="read-more-button">Read More</button>
+        <Img 
+          className="image"
+          alt="article"
+          src={[this.props.article.thumb, noImg]}
+        >
+        </Img>
+      </div>
     }
   }
 
@@ -32,21 +36,26 @@ class Article extends Component {
   }
 
   render() {
-    return (
-      <div className="article">
-        <p className="article-category"
-          style={{color: this.props.article.category.color}}>{this.props.article.category.name}</p>
-        {this.renderThumb()}
-        <p className="article-title">
-          {this.props.article.title}
-        </p>
-        <div className="author">
-          {this.renderAvatar()}
-          <i className="author-name">by {this.props.article.author.name}</i>
+    if(this.props.article){
+      return (
+        <div className="article">
+          <p className="category"
+            style={{color: this.props.article.category.color}}>{this.props.article.category.name}
+          </p>
+          {this.renderThumb()}
+          <p className="title">
+            {this.props.article.title}
+          </p>
+          <div className="author">
+            {this.renderAvatar()}
+            <i className="author-name">by {this.props.article.author.name}</i>
+          </div>
+          {this.renderDescription()}
         </div>
-        {this.renderDescription()}
-      </div>
-    );
+      );
+    } else {
+      return null;
+    }
   }
 }
 

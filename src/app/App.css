@@ -3,18 +3,31 @@
   min-width: 320px;
 }
 
+/*TOOLBAR*/
+.topbar{
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  height: 56px;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #979797;
+}
+
 /*CONTENT*/
 .content{
   font-family: 'Open Sans', sans-serif;
   margin: auto;
-  margin-top: 65px;
   margin-bottom: 30px;
+  padding-top: 56px;
   width: 81vw;
 }
 
-/*MOBILE SMALL*/
-@media (max-width: 750px){
+/*MOBILE*/
+@media (max-width: 1170px){
   .content{
-    width: 90.6vw;
+    width: 90vw;
   }
 }
+
