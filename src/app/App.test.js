@@ -4,12 +4,12 @@ import App from './App';
 import { mount } from 'enzyme';
 import MockAjax from './Helpers/MockAjax'
 
-const fakeFeed = [];
+const fakeEmptyFeed = [];
 
 describe("App", () => {
 	it("renders App and calls fetchFeed on component mount", () => {
 		const fetchFeed = MockAjax({
-			results: fakeFeed
+			results: fakeEmptyFeed
 		});
 		const div = document.createElement('div');
 		const component = mount(<App fetchFeed={fetchFeed} />, div);
@@ -17,7 +17,7 @@ describe("App", () => {
 
 	it("set isLoading to false after fetch data", async () => {
 		const fetchFeed = MockAjax({
-			results: fakeFeed
+			results: fakeEmptyFeed
 		});
 		const div = document.createElement('div');
 		const component = await mount(<App fetchFeed={fetchFeed} />, div);
@@ -26,18 +26,18 @@ describe("App", () => {
 
 	it("set component feed to returned data", async () => {
 		const fetchFeed = MockAjax({
-			results: fakeFeed
+			results: fakeEmptyFeed
 		});
 		const div = document.createElement('div');
 		const component = await mount(<App fetchFeed={fetchFeed} />, div);
-		expect(component.state("feed")).toEqual(fakeFeed);
+		expect(component.state("feed")).toEqual(fakeEmptyFeed);
 	});
 
-	//Todo
-	it("Should display a NO INTERNET message when offline", async () => {});
-
-	it("Should display a NO NEWS FOUND message when no message is found", async () => {});
-
-	it("Should display a SERVER PROBLEMS message when the server return an ERROR Status Code", async () => {});
+	it("Should display a SERVER PROBLEMS message when the server is offline or the response is invalid", async () => {
+		const fetchFeed = await MockAjax(null, true);
+		const div = document.createElement('div');
+		const component = await mount(<App fetchFeed={fetchFeed} />, div);
+		expect(component.state("isLoading")).toEqual(false);
+	});
 
 });

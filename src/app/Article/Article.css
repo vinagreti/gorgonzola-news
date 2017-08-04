@@ -53,6 +53,10 @@
 
 /* SECONDARY ARTICLES MOBILE */
 @media (max-width: 1170px){
+  .article .thumb-wrapper{
+    position: static;
+  }
+
   .read-more-button{
     display: none;
   }
