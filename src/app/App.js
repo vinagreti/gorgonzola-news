@@ -4,7 +4,14 @@ import ArticleList from './Article/ArticleList.js';
 import Toolbar from './Toolbar/Toolbar.js';
 import fetch from './Helpers/Request'
 
+export const fetchFeed = () => {
+    return fetch.get('article/')
+}
+
 class App extends Component {
+  
+  static defaultProps = {fetchFeed};
+
   constructor(props){
     super(props);
     this.state = {
@@ -15,14 +22,13 @@ class App extends Component {
 
   componentDidMount() {
     this.loadFeed();
-
     setInterval(() => {
       this.loadFeed();
     }, 40000)
   }
 
-  loadFeed(){
-    fetch.get('article/')
+  loadFeed = () => {
+    return this.props.fetchFeed()
     .then(res => {
       this.setState({
         feed: res.results,
@@ -35,7 +41,7 @@ class App extends Component {
   render() {
     if(this.state.isLoading){
       return(
-        <i className="fa fa-spinner fa-spin">loading</i>
+        <i>Loading news. Please, wait.</i>
       )
     } else {
       return(

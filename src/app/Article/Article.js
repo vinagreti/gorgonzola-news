@@ -36,22 +36,26 @@ class Article extends Component {
   }
 
   render() {
-    return (
-      <div className="article">
-        <p className="category"
-          style={{color: this.props.article.category.color}}>{this.props.article.category.name}
-        </p>
-        {this.renderThumb()}
-        <p className="title">
-          {this.props.article.title}
-        </p>
-        <div className="author">
-          {this.renderAvatar()}
-          <i className="author-name">by {this.props.article.author.name}</i>
+    if(this.props.article){
+      return (
+        <div className="article">
+          <p className="category"
+            style={{color: this.props.article.category.color}}>{this.props.article.category.name}
+          </p>
+          {this.renderThumb()}
+          <p className="title">
+            {this.props.article.title}
+          </p>
+          <div className="author">
+            {this.renderAvatar()}
+            <i className="author-name">by {this.props.article.author.name}</i>
+          </div>
+          {this.renderDescription()}
         </div>
-        {this.renderDescription()}
-      </div>
-    );
+      );
+    } else {
+      return null;
+    }
   }
 }
 

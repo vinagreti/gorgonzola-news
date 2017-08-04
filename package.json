@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "@ckldeveloper/fetch": "^2.0.2",
-    "axios": "^0.16.2",
+    "enzyme": "^2.9.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-image": "^1.0.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "react-test-renderer": "^15.6.1"
   },
   "scripts": {
     "start": "react-scripts start",

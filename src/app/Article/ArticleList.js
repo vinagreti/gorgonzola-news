@@ -18,29 +18,33 @@ class ArticleList extends Component {
   }
 
   render() {
-    return (
-      <div className="article-list">
-        {this.props.articles.map((article, index) => {
-            if(index < 3){
-              return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
-                <Article article={article} position={this.getArticlePosition(index)}></Article>
-              </div>;
-            } else {
-                return ''
-            }
-        })}
-        <div className="divider"></div>
-        {this.props.articles.map((article, index) => {
-            if(index > 2){
-              return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
-                <Article article={article} position={this.getArticlePosition(index)}></Article>
-              </div>;
-            } else {
-                return ''
-            }
-        })}
-      </div>
-    );
+    if(this.props.articles){
+        return (
+          <div className="article-list">
+            {this.props.articles.map((article, index) => {
+                if(index < 3){
+                  return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
+                    <Article article={article} position={this.getArticlePosition(index)}></Article>
+                  </div>;
+                } else {
+                    return null;
+                }
+            })}
+            <div className="divider"></div>
+            {this.props.articles.map((article, index) => {
+                if(index > 2){
+                  return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
+                    <Article article={article} position={this.getArticlePosition(index)}></Article>
+                  </div>;
+                } else {
+                    return null;
+                }
+            })}
+          </div>
+        );
+    } else {
+        return null;
+    }
   }
 }
 
