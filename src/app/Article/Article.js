@@ -14,11 +14,13 @@ class Article extends Component {
   renderThumb(){
     if(this.props.article.thumb && this.props.position !== 'minimal'){
       return <div className="thumb-wrapper">
+        <button type="button" className="read-more-button">Read More</button>
         <Img 
           className="image"
           alt="article"
           src={[this.props.article.thumb, noImg]}
-        ></Img>
+        >
+        </Img>
       </div>
     }
   }

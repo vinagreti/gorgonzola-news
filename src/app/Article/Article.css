@@ -14,7 +14,9 @@
 }
 
 .article .thumb-wrapper{
-  display: block;
+  position: relative;
+  display: inline-block;
+  text-align: center;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -27,12 +29,17 @@
 }
 
 .read-more-button{
-  position:absolute;
-  width:100px;
-  height:30px;
-  top:50%;
-  left:50%;
-  margin: -15px 0px 0px -50px;
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -20px 0px 0px -75px;
+  padding: 12px 32px 11px 32px;
+  background: rgba(0,0,0,0.50);
+  border: 1px solid #fff;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
 }
 
 .article .title{
@@ -46,6 +53,9 @@
 
 /* SECONDARY ARTICLES MOBILE */
 @media (max-width: 1170px){
+  .read-more-button{
+    display: none;
+  }
 }
 
 /* SECONDARY ARTICLES MOBILE SMALL */
