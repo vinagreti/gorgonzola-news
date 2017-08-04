@@ -18,6 +18,12 @@
   width: 31%;
 }
 
+/*DIVIDER*/
+.divider{
+  width: 100%;
+  border: 1px solid #E4E4E4;
+  margin-top: 26px;
+}
 
 /*MOBILE*/
 @media (max-width: 1170px){

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ArticleList from './Article/ArticleList.js';
-import Topbar from './Topbar/Topbar.js';
+import Toolbar from './Toolbar/Toolbar.js';
 import fetch from './Helpers/Request'
 
 class App extends Component {
@@ -40,7 +40,9 @@ class App extends Component {
     } else {
       return(
         <div className="app">
-          <Topbar></Topbar>
+          <div className="topbar">
+            <Toolbar></Toolbar>
+          </div>
           <div className="content">
             <ArticleList articles={this.state.feed}></ArticleList>
           </div>

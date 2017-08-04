@@ -21,9 +21,23 @@ class ArticleList extends Component {
     return (
       <div className="article-list">
         {this.props.articles.map((article, index) => {
-          return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
-            <Article article={article} position={this.getArticlePosition(index)}></Article>
-          </div>;
+            if(index < 3){
+              return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
+                <Article article={article} position={this.getArticlePosition(index)}></Article>
+              </div>;
+            } else {
+                return ''
+            }
+        })}
+        <div className="divider"></div>
+        {this.props.articles.map((article, index) => {
+            if(index > 2){
+              return <div className={`${this.getArticlePosition(index)}-article`} key={article.id}>
+                <Article article={article} position={this.getArticlePosition(index)}></Article>
+              </div>;
+            } else {
+                return ''
+            }
         })}
       </div>
     );

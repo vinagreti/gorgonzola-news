@@ -103,6 +103,11 @@
 }
 
 /*MINIMAL ARTICLES*/
+.minimal-article .article{
+  margin: 50px 0 0 0;
+}
+
+
 .minimal-article .title{
   font-size: 17px;
   line-height: 21px;
@@ -117,11 +122,4 @@
 .minimal-article .author-avatar{
   width: 32px;
   height: 32px;
-}
-
-/*DIVIDER*/
-.divider{
-  width: 100%;
-  border: 1px solid #E4E4E4;
-  margin: 10px 0 30px 0;
 }
