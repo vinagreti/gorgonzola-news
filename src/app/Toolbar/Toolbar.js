@@ -34,7 +34,7 @@ class Toolbar extends Component {
   render() {
     return (
       <div className="toolbar">
-        <img className="logo" src={logo} alt="logo" />
+        <a href="/"><img className="logo" src={logo} alt="logo" /></a>
         <button type="button" className="menu-button" onClick={this.toggleMenu}>
           <img className="menu-icon" src={menu} alt="menu button" />
         </button>

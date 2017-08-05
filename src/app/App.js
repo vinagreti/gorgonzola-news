@@ -4,8 +4,9 @@ import ArticleList from './Article/ArticleList.js';
 import Toolbar from './Toolbar/Toolbar.js';
 import fetch from './Helpers/Request'
 
+let category = window.location.pathname.split('/').filter(function(el){ return !!el; }).pop();
+
 export const fetchFeed = () => {
-  let category = window.location.pathname.split('/').filter(function(el){ return !!el; }).pop();
   return fetch.get(`article/${category || ''}`);
 }
 
@@ -55,17 +56,16 @@ class App extends Component {
     return this.props.fetchFeed()
     .then(this.setFetchData, this.setFailedToFetch)
     .catch(this.setFailedToFetch);
-
   }
 
   render() {
     if(this.state.isLoading){
       return(
-        <i>Loading news. Please, wait.</i>
+        <p>Loading news. Please, wait.</p>
       )
     } else if(this.state.failedToFetch){
       return(
-        <i>Oh no!!! Problems loading the news. Please, try again later.</i>
+        <p>Oh no!!! Problems loading the news. Please, try again later.</p>
       )
     } else {
       return(
@@ -74,7 +74,7 @@ class App extends Component {
             <Toolbar></Toolbar>
           </div>
           <div className="content">
-            <ArticleList articles={this.state.feed}></ArticleList>
+            <ArticleList articles={this.state.feed} category={category}></ArticleList>
           </div>
         </div>
       )
