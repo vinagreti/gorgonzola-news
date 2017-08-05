@@ -31,4 +31,4 @@ See the section about [deployment](#deployment) for more information.
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 ## DEMO
-A demos is available in https://vinagreti.github.io/gorgonzola-news/
+A demos is available in http://gorgonzola-new.s3-website-sa-east-1.amazonaws.com
